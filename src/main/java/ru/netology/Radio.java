@@ -34,12 +34,14 @@ public class Radio {
         if (currentStation > 9) {
             this.currentStation = currentStation;
         }
+        return;
     }
 
     public void setPrevStation () {
         if (currentStation < 0) {
             this.currentStation = currentStation;
         }
+        return;
     }
 
 }
