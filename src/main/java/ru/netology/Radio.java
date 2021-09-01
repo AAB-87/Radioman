@@ -46,11 +46,11 @@ public class Radio {
 
     public int getMaxStation() { return maxStation; }
 
-    public void NextStation(int newCurrentStation) {
+    public void nextStation(int newCurrentStation) {
         setCurrentVolume(newCurrentStation + 1);
     }
 
-    public void PrevStation(int newCurrentStation) {
+    public void prevStation(int newCurrentStation) {
         setCurrentVolume(newCurrentStation - 1);
     }
 

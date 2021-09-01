@@ -47,7 +47,7 @@ class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentVolume(rad.getMinVolume());
 
-        rad.turnDownVolume(0);
+        rad.turnDownVolume(-1);
 
         int expected = rad.getMinVolume();
         int actual = rad.getCurrentVolume();
@@ -107,7 +107,7 @@ class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentStation(rad.getMaxStation());
 
-        rad.NextStation(10);
+        rad.nextStation(10);
 
         int expected = rad.getMaxStation();
         int actual = rad.getCurrentStation();
@@ -120,7 +120,7 @@ class RadioTest {
        Radio rad = new Radio();
         rad.setCurrentStation(rad.getMinStation());
 
-        rad.PrevStation(-1);
+        rad.prevStation(-1);
 
         int expected = rad.getMinStation();
         int actual = rad.getCurrentStation();
