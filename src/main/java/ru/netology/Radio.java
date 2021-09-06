@@ -2,7 +2,7 @@ package ru.netology;
 
 public class Radio {
 
-    private int currentVolume = 8;
+    private int currentVolume;
     private int maxVolume = 10;
     private int minVolume = 0;
 
@@ -25,15 +25,16 @@ public class Radio {
         }
         this.currentVolume = newCurrentVolume;
     }
-
-    public void turnUpVolume(int newCurrentVolume) {
-        setCurrentVolume(newCurrentVolume + 1);
-    }
-
-    public void turnDownVolume(int newCurrentVolume) {
-        setCurrentVolume(newCurrentVolume - 1);
-
-    }
+// нет в задании
+//    public void turnUpVolume(int newCurrentVolume) {
+//        setCurrentVolume(newCurrentVolume + 1);
+//
+//    }
+// нет в задании
+//    public void turnDownVolume(int newCurrentVolume) {
+//        setCurrentVolume(newCurrentVolume - 1);
+//
+//    }
 
 
     private int currentStation;
@@ -46,25 +47,38 @@ public class Radio {
 
     public int getMaxStation() { return maxStation; }
 
-    public void nextStation(int newCurrentStation) {
-        setCurrentVolume(newCurrentStation + 1);
+    public int setNextStation() {
+        if (currentStation == maxStation) {
+            this.currentStation = currentStation;
+        }
+        if (currentStation < maxStation) {
+            this.currentStation = currentStation + 1;
+        }
+        return;
+
     }
 
-    public void prevStation(int newCurrentStation) {
-        setCurrentVolume(newCurrentStation - 1);
+    public int setPrevStation() {
+        if (currentStation < minStation) {
+            this.currentStation = currentStation - 1;
+        }
+        return;
     }
 
     public void setCurrentStation(int currentStation) {
         if (currentStation > maxStation) {
+            this.сurrentStation = maxStation;
             return;
         }
         if (currentStation < minStation) {
+            this.сurrentStation = minStation;
             return;
         }
         this.currentStation = currentStation;
     }
 
-    public void setMaxStation(int maxStation) { this.maxStation = maxStation; }
-
-    public void setMinStation(int minStation) { this.minStation = minStation; }
+//
+//    public void setMaxStation(int maxStation) { this.maxStation = maxStation; }
+//
+//    public void setMinStation(int minStation) { this.minStation = minStation; }
 }
