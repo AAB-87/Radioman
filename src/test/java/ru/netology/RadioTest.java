@@ -106,9 +106,9 @@ class RadioTest {
     public void turnUpNextStation() {
         Radio rad = new Radio();
 
-        rad.setCurrentStation(rad.getMaxStation());
-
         rad.nextStation();
+
+        rad.setCurrentStation(rad.getMaxStation());
 
         int expected = rad.getMaxStation();
         int actual = rad.getCurrentStation();
@@ -119,10 +119,10 @@ class RadioTest {
    @Test
    public void turnDownPrevStation() {
        Radio rad = new Radio();
+
        rad.prevStation();
 
        rad.setCurrentStation(rad.getMinStation());
-
 
        int expected = rad.getMinStation();
        int actual = rad.getCurrentStation();
