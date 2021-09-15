@@ -106,7 +106,7 @@ class RadioTest {
     public void turnUpNextStation() {
         Radio rad = new Radio();
 
-        rad.setCurrentStation(rad.getMaxStation());
+        rad.setCurrentStation(rad.getMinStation());
 
         rad.nextStation();
 
@@ -120,7 +120,7 @@ class RadioTest {
    public void turnDownPrevStation() {
        Radio rad = new Radio();
 
-       rad.setCurrentStation(rad.getMaxStation());
+       rad.setCurrentStation(rad.getMinStation());
 
        rad.prevStation();
 
