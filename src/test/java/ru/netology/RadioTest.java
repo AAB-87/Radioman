@@ -124,7 +124,7 @@ class RadioTest {
 
        rad.prevStation();
 
-       int expected = rad.getMaxStation();
+       int expected = rad.getMaxStation() - 1;
        int actual = rad.getCurrentStation();
 
        assertEquals(expected, actual);
