@@ -62,7 +62,7 @@ public class Radio {
             this.currentStation = minStation;
             return;
         }
-        this.currentStation = currentStation + 1;
+        currentStation = currentStation + 1;
     }
 
     public void prevStation() {
@@ -75,4 +75,5 @@ public class Radio {
     public void setMaxStation(int maxStation) { this.maxStation = maxStation; }
 
     public void setMinStation(int minStation) { this.minStation = minStation; }
+
 }
