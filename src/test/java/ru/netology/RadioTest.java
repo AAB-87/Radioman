@@ -106,12 +106,12 @@ class RadioTest {
     public void turnUpNextStation() {
         Radio rad = new Radio();
 
-        rad.setCurrentStation(rad.getMinStation());
+        rad.setCurrentStation(rad.getMaxStation());
 
         rad.nextStation();
 
-        int expected = rad.getMinStation();
-        int actual = rad.getCurrentStation() - 1;
+        int expected = rad.getMinStation() + 1;
+        int actual = rad.getCurrentStation();
 
         assertEquals(expected, actual);
   }
@@ -124,8 +124,8 @@ class RadioTest {
 
        rad.prevStation();
 
-       int expected = rad.getMaxStation();
-       int actual = rad.getCurrentStation() + 1;
+       int expected = rad.getMaxStation() - 1;
+       int actual = rad.getCurrentStation();
 
        assertEquals(expected, actual);
    }
