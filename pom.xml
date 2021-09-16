@@ -21,12 +21,6 @@
             <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.testng</groupId>-->
-<!--            <artifactId>testng</artifactId>-->
-<!--            <version>RELEASE</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -71,27 +65,9 @@
                             <element>BUNDLE</element>
                             <limits>
                                 <limit>
-                                    <counter>INSTRUCTION</counter>
+                                    <counter>BRANCH</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>0.80</minimum>
-                                </limit>
-                                <limit>
-                                    <counter>CLASS</counter>
-                                    <value>MISSEDCOUNT</value>
-                                    <maximum>0</maximum>
-                                </limit>
-                            </limits>
-                        </rule>
-                        <rule>
-                            <element>CLASS</element>
-                            <excludes>
-                                <exclude>*Test</exclude>
-                            </excludes>
-                            <limits>
-                                <limit>
-                                    <counter>LINE</counter>
-                                    <value>COVEREDRATIO</value>
-                                    <minimum>100%</minimum>
+                                    <minimum>1.0</minimum>
                                 </limit>
                             </limits>
                         </rule>
