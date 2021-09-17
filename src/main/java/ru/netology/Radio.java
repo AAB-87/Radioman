@@ -31,15 +31,16 @@ public class Radio {
 
     public void maxVolume() {
         if (currentVolume == maxVolume) {
-            this.currentStation = currentStation + 1;
+            return;
         }
-
+        this.currentVolume = currentVolume + 1;
     }
 
     public void minVolume() {
         if (currentVolume == minVolume) {
-            this.currentStation = currentStation - 1;
+            return;
         }
+        this.currentVolume = currentVolume - 1;
     }
 
     public int getCurrentStation() { return currentStation; }
