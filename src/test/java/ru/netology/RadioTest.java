@@ -32,6 +32,33 @@ class RadioTest {
     @Test
     public void turnUpVolume() {
         Radio rad = new Radio();
+        rad.setCurrentVolume(rad.getMinVolume());
+
+        rad.maxVolume();
+
+        int expected = rad.getMinVolume();
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void turnDownVolume() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(rad.getMaxVolume());
+
+        rad.minVolume();
+
+        int expected = rad.getMaxVolume();
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void CurrentStationNotEqualToMaxVolume() {
+        Radio rad = new Radio();
+
         rad.setCurrentVolume(rad.getMaxVolume());
 
         rad.maxVolume();
@@ -43,8 +70,9 @@ class RadioTest {
     }
 
     @Test
-    public void turnDownVolume() {
+    public void CurrentStationNotEqualToMinVolume() {
         Radio rad = new Radio();
+
         rad.setCurrentVolume(rad.getMinVolume());
 
         rad.minVolume();
