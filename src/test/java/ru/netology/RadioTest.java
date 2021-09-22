@@ -7,6 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioTest {
 
     @Test
+    void containsTheNumberOfStations() {
+        Radio rad = new Radio(10);
+
+        assertEquals(10, rad.getNumberOfStations());
+
+    }
+
+
+    @Test
     void shouldNotSetVolumeBelowMin() {
         Radio rad = new Radio();
 

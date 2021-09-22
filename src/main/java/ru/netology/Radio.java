@@ -1,13 +1,25 @@
 package ru.netology;
 
+import javax.swing.*;
+
 public class Radio {
 
     private int currentVolume;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
     private int currentStation;
     private int maxStation = 9;
     private int minStation = 0;
+    private int numberOfStations = 10;
+
+    public Radio(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
+    }
+
+    public Radio() {
+    }
+
+    public int getNumberOfStations() { return numberOfStations; }
 
     public int getMaxVolume() { return maxVolume; }
 
