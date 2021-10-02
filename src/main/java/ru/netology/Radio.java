@@ -3,81 +3,84 @@ package ru.netology;
 public class Radio {
 
     private int currentVolume;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
     private int currentStation;
-    private int maxStation = 9;
     private int minStation = 0;
+    private int numberOfStations = 10;
 
-    public int getMaxVolume() { return maxVolume; }
+    public Radio() { }
 
-    public int getMinVolume() { return minVolume; }
+    public Radio(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
+    }
 
-    public int getCurrentVolume() { return currentVolume; }
+    public int getMaxVolume() {
+        return maxVolume;
+    }
 
-    public void setMaxVolume(int maxVolume) { this.maxVolume = maxVolume; }
+    public int getMinVolume() {
+        return minVolume;
+    }
 
-    public void setMinVolume(int minVolume) { this.minVolume = minVolume; }
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > maxVolume) {
+        if (currentVolume < minVolume) {
             return;
         }
-        if (currentVolume < minVolume) {
+        if (currentVolume > maxVolume) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
-    public void maxVolume() {
+    public void increaseTheVolume() {
         if (currentVolume == maxVolume) {
             return;
         }
         this.currentVolume = currentVolume + 1;
     }
 
-    public void minVolume() {
+    public void decreaseTheVolume() {
         if (currentVolume == minVolume) {
             return;
         }
         this.currentVolume = currentVolume - 1;
     }
 
-    public int getCurrentStation() { return currentStation; }
+    public int getCurrentStation() {
+        return currentStation;
+    }
 
-    public int getMinStation() { return minStation; }
+    public int getMinStation() {
+        return minStation;
+    }
 
-    public int getMaxStation() { return maxStation; }
-
-    public void setMaxStation(int maxStation) { this.maxStation = maxStation; }
-
-    public void setMinStation(int minStation) { this.minStation = minStation; }
-
+    public int getNumberOfStations() {
+        return numberOfStations;
+    }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation > maxStation) {
-            return;
-        }
         if (currentStation < minStation) {
-            return;
+            currentStation = numberOfStations;
+        }
+        if (currentStation >= numberOfStations) {
+            currentStation = minStation;
         }
         this.currentStation = currentStation;
     }
 
     public void nextStation() {
-        if (currentStation == maxStation) {
-            this.currentStation = minStation;
-            return;
-        }
-        currentStation = currentStation + 1;
+        setCurrentStation(currentStation + 1);
     }
 
     public void prevStation() {
         if (currentStation == minStation) {
-            this.currentStation = maxStation;
-            return;
+            this.currentStation = numberOfStations;
         }
         this.currentStation = currentStation - 1;
     }
-
 }
